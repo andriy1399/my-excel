@@ -5,9 +5,6 @@ const {
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// const {
-//     LoaderOptionsPlugin,
-// } = require('webpack');
 const isProd = process.env.NODE_ENV === 'production';
 const isDev = !isProd;
 const filename = ext => isDev ? `bundle.${ext}` : `bundle.[hash].${ext}`;
