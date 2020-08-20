@@ -9,7 +9,8 @@
         "arrow-parens":"off",
         "indent": ["error", 4],
         "linebreak-style": ["error", "windows"],
-        "require-jsdoc": "off"
+        "require-jsdoc": "off",
+        "object-curly-spacing": ["error", "always"]
     },
     "extends": ["eslint:recommended", "google"]
 }
