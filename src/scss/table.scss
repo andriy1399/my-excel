@@ -8,14 +8,14 @@
     top: $header-height + $toolbar-height + $formula-height;
     overflow-x: auto;
     padding-bottom: 2px;
-    .row{
+    .row {
         display: flex;
         flex-direction: row;
         min-height: 20px;
-        height: $row-height;;
+        height: $row-height;
     }
 
-    .row-info{
+    .row-info {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -24,13 +24,25 @@
         border: 1px solid $border-color;
         background: #f8f9fa;
         border-top: none;
+        position: relative;
     }
 
-    .row-data{
+    .row-info,
+    .column {
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Chrome/Safari/Opera */
+        -khtml-user-select: none; /* Konqueror */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                                            not supported by any browser */
+    }
+
+    .row-data {
         display: flex;
     }
 
-    .column{
+    .column {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -41,9 +53,10 @@
         height: 100%;
         border-left: none;
         border-top: none;
+        position: relative;
     }
 
-    .cell{
+    .cell {
         min-width: 40px;
         padding: 5px;
         width: $cell-width;
@@ -54,12 +67,35 @@
         color: #111;
         white-space: nowrap;
         outline: none;
-        &.selected{
+        &.selected {
             border: none;
-            outline: 2px solid #3c74ff;
+            outline: 2px solid $primary-color;
             z-index: 2;
         }
-
     }
 
-}   
+    .col-resize,
+    .row-resize {
+        position: absolute;
+        bottom: -1px;
+        right: 0;
+        background-color: $primary-color;
+        opacity: 0;
+        z-index: 1000;
+        &:hover {
+            opacity: 1 !important;
+        }
+    }
+
+    .col-resize {
+        top: 0;
+        width: 4px;
+        cursor: col-resize;
+    }
+
+    .row-resize {
+        left: 0;
+        height: 4px;
+        cursor: row-resize;
+    }
+}
